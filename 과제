@@ -158,10 +158,7 @@ class Block:  # 블럭과 블럭의 움직임 구현
                     grid_x = x + j
                     grid_y = y + i
                     
-                    # grid_y가 음수일 때 (화면 밖 위쪽)는 충돌 검사를 무시
                     if grid_y >= 0:
-                        # 0 <= grid_y < HEIGHT_CELL와 0 <= grid_x < WIDTH_CELLS는 이미 벽으로 처리되어 있으므로
-                        # FIELD[grid_y][grid_x] != 0 검사만으로 벽, 바닥 및 고정된 블럭과의 충돌이 처리됨
                         if FIELD[grid_y][grid_x] != 0: # 벽(WALL_COLOR) 또는 고정된 블럭(색상)과 충돌
                             return True
         return False

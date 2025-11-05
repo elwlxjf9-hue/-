@@ -136,7 +136,7 @@ class Block:  # 블럭과 블럭의 움직임 구현
         
         self.y += drop_distance
         
-        if drop_distance > 0: # 실제로 이동이 있었다면 고정
+        if drop_distance > 0: 
             self.lock_block()
             return True
         return False # 이동 없이 바로 고정될 경우
@@ -178,7 +178,7 @@ class Block:  # 블럭과 블럭의 움직임 구현
                     # 블록 내부 채우기
                     pygame.draw.rect(SURFACE, self.color, [screen_x, screen_y, block_size, block_size], 0)
                     
-                    # 블럭 경계선 (검은색)
+                    # 블럭 경계선 그리기
                     pygame.draw.rect(SURFACE, BLACK, [screen_x, screen_y, block_size, block_size], 1)
 
 # 게임 로직
@@ -402,7 +402,7 @@ def main():
 
     while game_state != GAME_STATE_QUIT:
         if game_state == GAME_STATE_MENU:
-            game_state = main_menu() # 상태 반환값을 저장해야 함
+            game_state = main_menu()
 
         elif game_state == GAME_STATE_RUNNING:
             game_state = game_loop()
